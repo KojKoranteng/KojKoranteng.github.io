@@ -1,0 +1,773 @@
+.game {
+    width: 440px;
+    height: 440px;
+    padding: 10px;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* based on borde #56 https://getcssscan.com/css-box-shadow-examples*/
+    box-shadow: 8px 5px 5px 6px #4e4452; 
+  	-webkit-box-shadow: 8px 2px 6px 8px #e7cece60;
+}
+
+/*reduces game board size for 5 times table*/
+.fiveX {
+    width: 240px;
+    height: 240px;
+    padding: 10px;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+     /* based on borde #56 https://getcssscan.com/css-box-shadow-examples*/
+    box-shadow: 8px 5px 5px 6px #4e4452; 
+  	-webkit-box-shadow: 8px 2px 6px 8px #e7cece60; 
+}
+
+/*reduces side-row width for 5 times table*/
+.fiveXbottom {
+    width:200;
+    height:40;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    font-size: 15px;
+}
+
+/*reduces game grid size for 5 times table*/
+.fiveMain {
+    width:200px;
+    height:200px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    font-size: 5px;
+    margin:0px;
+}
+
+/*increases game grid size for 12 times table*/
+.twelveX {
+    width: 520px;
+    height: 520px;
+    padding: 10px;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+     /* based on border #56 https://getcssscan.com/css-box-shadow-examples*/
+    box-shadow: 8px 5px 5px 6px #4e4452;
+  	-webkit-box-shadow: 8px 2px 6px 8px #e7cece60; 
+}
+
+/*increases game grid size for 12 times table*/
+.twelveXbottom {
+    width:560;
+    height:40;
+    display: grid;
+    grid-template-columns: 1fr 12fr;
+    font-size: 15px;
+}
+
+/*increases game grid size for 12 times table*/
+.twelveMain {
+    width:480px;
+    height:480px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    font-size: 5px;
+    margin:0px;
+}
+
+header {
+    padding-bottom:10px;
+    background-color: rgba(20, 1, 29, 0.767);
+    color:yellow;
+    font-size: 2.5em;
+    text-align: center;
+
+    /* Glow animaton: Developer: Amber, title: glowing text, music inspred;
+     https://www.sliderrevolution.com/resources/css-text-animation/ */
+    animation: glow 2s ease-in-out infinite; 
+    box-sizing: border-box;
+}
+
+@keyframes glow {
+    from {
+      text-shadow: 0 0 20px #2d9da9;
+    }
+    to {
+      text-shadow: 0 0 30px #34b3c1, 0 0 10px #4dbbc7;
+    }
+  }
+
+
+header h1 {
+    margin-bottom: 0px;
+    margin-top: 200px;
+    padding-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* flip animation based on demo by Muhammad Asif
+    from: https://codeconvey.com/css-continuous-flip-animation/ */
+    animation: flip 2s ease 1; 
+    backface-visibility: visible !important;
+}
+
+    @keyframes flip {
+	0% {
+		transform: perspective(400px) rotateY(0);
+		animation-timing-function: ease-out;
+	}
+	40% {
+		transform: perspective(400px) translateZ(150px) rotateY(170deg);
+		animation-timing-function: ease-out;
+	}
+	50% {
+		transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+		animation-timing-function: ease-in;
+	}
+	80% {
+		transform: perspective(400px) rotateY(360deg) scale(.95);
+		animation-timing-function: ease-in;
+	}
+	100% {
+		transform: perspective(400px) scale(1);
+		animation-timing-function: ease-in;
+	}
+}
+
+header h2 {
+    margin-top: 5px;
+    margin-bottom: 3px;
+    font-size: 1em;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* Glow animaton: Developer: Amber, title: glowing text, music inspred;
+     https://www.sliderrevolution.com/resources/css-text-animation/ */
+    animation: glow 2s ease-in-out infinite; 
+}
+
+  
+.question {
+    padding: 10px 10px 0px 10px;
+    background-color: rgba(20, 1, 29, 0.767);
+    margin: 0px;
+    color:yellow;
+    font-size: 1.7em;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    animation: questionGlow 2s ease-in-out infinite;
+}
+
+@keyframes questionGlow {
+    from {
+      text-shadow: 0 0 20px #18c5d8;
+    }
+    to {
+      text-shadow: 0 0 30px #51898f, 0 0 10px #34595e;
+    }
+  }
+
+#num {
+    background-color: darkcyan;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 15px;
+    border: 2px whitesmoke solid;
+    animation: glow 1s ease-in-out infinite;
+  }
+
+#trophy-text{
+    color:  yellow;
+    text-align: center;
+    font-size: 1.5em;
+    animation: glow;
+    padding: 0px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    animation: questionGlow 2s ease-in-out infinite; 
+}
+
+.instructions {
+    font-family: Arial, Helvetica, sans-serif;
+    color:white;
+    text-align: center;
+    font-size: 1.5em;
+    margin: auto;
+    padding: 20px;
+    display: block;
+    background-color:rgba(20, 1, 29, 0.767);
+    box-sizing: border-box;
+}
+
+h3 {
+    color: darkorange;
+    font-size: 2em;
+    text-align: center;
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* <ol> stlyling based on "Numbers in Bubbles" by Prototypr.
+ https://blog.prototypr.io/create-beautiful-numbered-lists-with-css-counters-726e705d9e14*/
+
+ol {
+    list-style:none;
+    counter-reset: kevin;
+}
+
+li {
+    counter-increment: kevin;
+}
+
+li:before {
+    content: counter(kevin);
+}
+
+li{
+    margin-bottom: 30px;
+}
+
+li:before {
+    margin-right: 1em;
+    background: darkorange;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    padding-top: 0.2rem;
+    text-align: center;
+    text-justify:distribute-all-lines;
+    display: inline-block;
+    box-sizing: border-box;
+    /* Based on shodow effect by Fossheim, shadow #61 from
+    https://getcssscan.com/css-box-shadow-examples*/
+    box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px,
+     rgb(31, 193, 27) 0px 0px 0px 3px,
+     rgb(255, 217, 19) 0px 0px 0px 4.5px,
+     rgb(255, 156, 85) 0px 0px 0px 6px,
+     rgb(255, 85, 85) 0px 0px 0px 7px; 
+}
+
+.rule-list {
+    width: 80%;
+    margin-left:auto;
+    margin-right:auto;
+    padding-bottom: 10px;
+    border-radius: 50px;
+    padding-top: 40px;
+    /*Based on effects from CSS Box Shadow generator:
+     https://cssgenerator.org/box-shadow-css-generator.html*/
+    box-shadow: -4px -3px 21px -2px rgba(224, 224, 156, 0.7);
+    -webkit-box-shadow: -4px -3px 21px -2px rgba(224, 224, 156, 0.7);
+    -moz-box-shadow: -4px -3px 21px -2px rgba(224, 224, 156, 0.7);
+}
+
+.mission-list{
+    width: 80%;
+    margin-left:auto;
+    margin-right:auto;
+    padding-bottom: 10px;
+    border-radius: 50px;
+    padding-top: 40px;
+    /*Based on effects from CSS Box Shadow generator: 
+    https://cssgenerator.org/box-shadow-css-generator.html*/
+    box-shadow: -4px -3px 21px -2px rgba(224, 224, 156, 0.7);
+    -webkit-box-shadow: -4px -3px 21px -2px rgba(224, 224, 156, 0.7);
+    -moz-box-shadow: -4px -3px 21px -2px rgba(224, 224, 156, 0.7);
+}
+
+.boxed{
+    padding: 10px;
+    background-color: rgba(20, 1, 29, 0.767);
+    color: white;
+    font-size: 1em;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.buttons-container {
+    padding:10px;
+    color: white;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    background-color: rgba(20, 1, 29, 0.767);
+}
+
+.buttons-container > button {
+    padding: 15px 25px 15px 25px;
+    border-radius: 10px;
+    font-size: 1.4vw;
+    margin: 20px;
+    color: #fff;
+    background-color: rgba(102, 25, 102, 0.596);
+    border: 2px solid darkcyan;
+    padding: 0 15px;
+    cursor: pointer;
+    width: 15%;
+    transition: all 0.2s ease-in-out;
+    box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px,
+     rgb(31, 193, 27) 0px 0px 0px 3px,
+     rgb(255, 217, 19) 0px 0px 0px 5px,
+     rgb(255, 156, 85) 0px 0px 0px 9px,
+     rgb(255, 85, 85) 0px 0px 0px 12px;;
+}
+
+/* If the screen size is 1080px wide or more, float the game buttons either side of the game board; 
+code snipped adapted from W3 Schools: https://www.w3schools.com/howto/howto_css_responsive_text.asp*/ 
+
+@media screen and (min-width: 1080px) {
+    .buttons-container > button {
+      font-size: 1.2vw;
+    }
+    #f50-50 {
+        position: Fixed;
+      top: 65%;
+      left: 5%;
+    }
+    #Narrow {
+        position: Fixed;
+      top: 75%;
+      left: 5%;
+    }
+    #start-game {
+        position: Fixed;
+      top: 65%;
+      right: 5%;
+    }
+    #main-menu {
+      position: Fixed;
+      top: 75%;
+      right: 6%;
+  }
+}
+  
+  /* If the screen size is 1079px wide or less, place the game buttons thier normal containers;
+ code snippet adapted from W3 Schools: https://www.w3schools.com/howto/howto_css_responsive_text.asp*/ 
+
+  @media screen and (max-width: 1079px) {
+    .buttons-container > button {
+      font-size: 15px;
+      width: 150px;
+      height:30px;
+    }
+  }
+.buttons-container > button:hover {
+   /* swing animation from https://www.csswand.dev/*/
+    animation: swing 1s ease;
+    animation-iteration-count: 1;
+}
+@keyframes swing {
+15% {
+transform: translateX(5px);
+}
+30% {
+transform: translateX(-5px);
+}
+50% {
+transform: translateX(3px);
+}
+65% {
+transform: translateX(-3px);
+}
+80% {
+transform: translateX(2px);
+}
+100% {
+transform: translateX(0);
+}
+}
+
+/* normal return to main menu button placement*/
+#main-menu{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+}
+
+.difficulty {
+    margin: auto;
+    height:max-content;
+    padding: 5%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(20, 1, 29, 0.767);
+}
+
+.difficulty > button {
+    width: 30%;
+    padding: 100px;
+    margin: auto;
+    color: yellow;
+    text-align: center;
+    border-radius: 50px;
+    font-size: 2em;
+    background-repeat: repeat-y;
+    background-size: cover;
+
+     /* shodow effect by Fossheim, shadow #61 from
+    https://getcssscan.com/css-box-shadow-examples*/
+
+    box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px,
+     rgb(31, 193, 27) 0px 0px 0px 6px,
+     rgb(255, 217, 19) 0px 0px 0px 9px,
+     rgb(255, 156, 85) 0px 0px 0px 12px,
+     rgb(255, 85, 85) 0px 0px 0px 15px;
+}
+
+.difficulty > button:hover {
+    /* bounce animation based 
+    Dynamic animations with CSS variables by Josh
+    Comeau at https://www.joshwcomeau.com/animation/keyframe-animations/*/
+
+    animation: Ibounce;
+    animation-duration: 1000ms;
+}
+
+@keyframes Ibounce { 
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-50px);} 
+    60% {transform: translateY(-15px);} 
+}
+
+.five {
+background-image: url("./images/five\ table.png"); /* original image "Boy solving mathematical example
+made of toy numbers" by Keira Burton from pexels*/
+}
+
+.ten {
+    background-image: url("./images/ten\ table.png"); /* original image "Multiracial Children Looking at 
+    a Wheeled Toy Vehicle" by Vanessa Loring from pexels*/
+}
+
+.twelve {
+    background-image: url("./images/SpaceBackground.png"); /* original image "Person Wearing White Astronaut Suit" 
+    by Pixabay from pexels*/
+}
+
+body{
+    background-image: url("./images/AstronautBG.png"); /* original image "Person Wearing White Astronaut Suit" 
+    by Pixabay from pexels*/
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size:cover;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    
+    /* shaddow effect based on thought.co "Learn How to Add Glow 
+    Effects Quickly and Easily With CSS3" By  Jennifer Kyrnin:
+    https://www.thoughtco.com/glow-effects-with-css3-p2-4091601*/
+
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+    -moz-box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+    box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+}
+
+.game-background {
+    padding: 20px 20px 5px 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(20, 1, 29, 0.767);
+}
+
+.top-row {
+    /* ADD CODE HERE Use css grid to create 11 equally sized columns */
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    font-size: 15px;
+}
+.bottom-row {
+    /* ADD CODE HERE use css grid with 2 columns with a ratio of 1:10 */
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    font-size: 15px;
+}
+
+.side-row {
+    /* ADD CODE HERE this should be 40px wide */
+    width: 40px;
+}
+
+.main {
+    /* ADD CODE HERE this should be 400px wide use css grid with 10 equally sized columns */
+    width:400px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    font-size: 5px;
+}
+
+.square {
+    height: 40px;
+    width: 40px;
+    background-color:Darkcyan ;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    color: yellow;
+    font-size: 20px;
+    border-radius: 5px;
+    animation: bringIn 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-delay: 0.1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bringIn {
+    0%   {transform: translateY(-187px);
+          opacity:50%; background-color:#f06d06;}
+
+    25% {background-color:yellow;} 
+    
+    50% {background-color: #f06d06;} 
+
+    75% {background-color: purple;}
+    
+    100% {transform: translateY(0%);
+          opacity:100%}
+  } 
+
+
+.square > button {
+    background-color: #555;
+    color: #f06d06;
+    font-size:20px;
+    border-radius: 10px;
+}
+
+.square > button:hover {
+    animation-name: bounce1;
+    animation-duration: 1000ms;
+}
+
+@keyframes bounce1 { 
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-10px);} 
+    60% {transform: translateY(-10px);} 
+}
+
+/*used for DOM rebuilds*/
+button {
+    background-color: #555;
+    color: #f06d06;
+    font-size:20px;
+    border-radius: 10px;
+}
+
+.square > p {
+    color: white;
+    font-size: 20px;
+}
+
+
+#output {
+    border: 2px darkcyan solid;
+    border-radius: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 1.6em;
+    animation: glow 1s ease-in-out infinite;
+
+    /*Based on effects from CSS Box Shadow generator: 
+    https://cssgenerator.org/box-shadow-css-generator.html*/
+
+    box-shadow: -4px -3px 21px -2px rgba(224, 224, 156, 0.7);
+    -webkit-box-shadow: -4px -3px 21px -2px rgba(224, 224, 156, 0.7);
+    -moz-box-shadow: -4px -3px 21px -2px rgba(224, 224, 156, 0.7);
+}
+
+#mistakes {
+    border: 2px darkcyan solid;
+    border-radius: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-right: 30px;
+    font-size: 1.6em;
+    animation: glow 1s ease-in-out infinite;
+
+    /*Based on effects from CSS Box Shadow generator: 
+    https://cssgenerator.org/box-shadow-css-generator.html*/
+
+    box-shadow: -4px -3px 21px -2px rgba(224, 224, 156, 0.7);
+    -webkit-box-shadow: -4px -3px 21px -2px rgba(224, 224, 156, 0.7);
+    -moz-box-shadow: -4px -3px 21px -2px rgba(224, 224, 156, 0.7);
+}
+
+#errors {
+    display: inline-flexbox;
+    color: yellow;
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 25px;
+    margin-top: 0px;
+}
+
+#attempts {
+    display: inline-flexbox;
+    font-size: 20px;
+    margin-bottom:0px;
+}
+
+.trophies {
+    display: block;
+    width: 90%;
+    text-align: center;
+    height:fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: solid darkcyan 2px;
+    border-radius: 100px;
+    background-image: url("./images/Bg4.png"); /* original image "Black and White Carbon Pattern" 
+    by Engin Akyurt from pexels.com*/
+    background-repeat: no-repeat;
+    background-size:cover;
+    box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px,
+     rgb(31, 193, 27) 0px 0px 0px 6px,
+     rgb(255, 217, 19) 0px 0px 0px 9px,
+     rgb(255, 156, 85) 0px 0px 0px 12px,
+     rgb(255, 85, 85) 0px 0px 0px 15px;
+}
+
+/* sizes trophies on appearance*/
+img {
+    width:10%;
+    margin-bottom: 10px;
+}
+
+img:hover {
+    animation: bounce;
+    animation-duration: 1000ms;
+}
+
+@keyframes bounce { 
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-30px);} 
+    60% {transform: translateY(-15px);} 
+}
+
+
+.visible {
+    visibility:visible;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.hidden {
+    visibility: hidden
+}
+
+.resetNarrowDownCol{
+    background-color: darkcyan;
+}
+
+.end-game{
+    width: 30%;
+    padding:80px;
+    border-radius: 10px;
+    font-size: 3em;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom:30px;
+    display: flex;
+    color: white;
+    background-image: url(./images/WelcomeHome.png); /* original image "Woman In A Costume At The Train Station"
+    by Koolshooter form pexels.com*/
+    background-size: cover;
+    background-color: rgba(102, 25, 102, 0.596);
+    border: 2px solid darkcyan;
+    cursor: pointer;
+    animation: flip 10s ease 2; 
+    animation-delay: 1s;
+    box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px,
+     rgb(31, 193, 27) 0px 0px 0px 3px,
+     rgb(255, 217, 19) 0px 0px 0px 5px,
+     rgb(255, 156, 85) 0px 0px 0px 9px,
+     rgb(255, 85, 85) 0px 0px 0px 12px;;
+}
+
+.too-many-mistakes{
+    width: 30%;
+    padding:80px;
+    border-radius: 10px;
+    font-size: 3em;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom:30px;
+    display: flex;
+    color: white;
+    background-image: url(./images/Failure.png); /* original image "Woman Sitting Beside Ice Cream" 
+    by Gratisography form pexels.com*/
+    background-size: cover;
+    background-color: rgba(102, 25, 102, 0.596);
+    border: 2px solid darkcyan;
+    cursor: pointer;
+    animation: flip 10s ease 2; 
+    animation-delay: 1s;
+    box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, 
+     rgb(31, 193, 27) 0px 0px 0px 3px,
+     rgb(255, 217, 19) 0px 0px 0px 5px,
+     rgb(255, 156, 85) 0px 0px 0px 9px,
+     rgb(255, 85, 85) 0px 0px 0px 12px;;
+}
+
+/* Based on original code by Edgardo Pinto-Escalier;
+https://codepen.io/Edgardo/pen/jPNdjq
+*/
+.celebrate{
+    height: 32px;
+    width: 32px;
+    color: yellow;
+    background-color: darkcyan;
+    border: 4px solid whitesmoke;
+    animation: square-to-circle 0.5s .50s
+    cubic-bezier(1,.015,.295,1.225) alternate;
+    animation-iteration-count: 1;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+@keyframes square-to-circle {
+    0%  {
+      border-radius:0 0 0 0;
+      background-color: #f06d06;
+      transform:rotate(0deg);
+    }
+    25%  {
+      border-radius:25% 25% 25% 25%;
+      background:purple;
+      transform:rotate(45deg);
+    }
+    50%  {
+      border-radius:50% 50% 50% 50%;
+      background:#f06d06;
+      transform:rotate(90deg);
+    }
+    75%  { 
+      border-radius:75% 75% 75% 75%;
+      background: yellow;
+      transform:rotate(180deg);
+    }
+    100% {  
+      border-radius:100% 100% 100% 100%;
+      background-color: #f06d06;
+      transform:rotate(360deg);
+    }
+}

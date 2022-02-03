@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multifly: Kevin Koranteng Cheeseman</title>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 id = "title" >Multifly</h1>
+        <h2 id = "tag-line">Practice your times tables</h2>
+    </header>
+
+    <div class = "difficulty" id = "game-select">
+        <button class = "five" id = "five-table"> 5 times table</button>
+        <button class = "ten" id = "ten-table"> 10 times table</button>
+        <button class = "twelve" id = "twelve-table"> 12 times table</button>
+    </div>
+
+    <div class = "instructions" id = "rules">
+        <h3 class = "how-to">How to play</h3>
+        <ol class = "rule-list">
+            <li>Choose from the times tables above like a boss.</li>
+            <li>Put on your space suit & enter into the game arena.</li>
+            <li>Read the question above the game board carefully.</li>
+            <li>Click the question mark where the answer should be.</li>
+        </ol>
+    </div>
+    <div class = "instructions" id = "mission">
+        <h3 class = "how-to">Your mission</h3>
+        <ol class = "mission-list">
+            <li>Collect all nine space trophies for your cabinet.</li>
+            <li>The first trophy appears after a few correct answers.</li>
+            <li>Use "Fifty-Fifty" or "Narrow down" to assist you.</li>
+            <li>Do use them wisely. They vanish after too many uses. </li>
+            <li>Good luck Space Cadet! We're counting on you!</li>
+        </ol>
+    </div>
+
+    
+<div class = "play-area" id = "area-of-play">
+    <div class = "trophies" id = trophiesID>
+        <p id = "trophy-text">Your Trophy Cabinet</p>
+        <img id = "drumstick" src="./images/drunstick 3.png" alt="a chicken drumstick">
+        <img id = "balloon" src="./images/baloon 7.png" alt="yellow balloons">
+        <img id = "certificate" src="./images/scholar 10.png" alt="a certificate">
+        <img id = "wreath" src="./images/wreath15.png" alt="an olive leaf wreath">
+        <img id = "badge" src="./images/badge20.png" alt="a purple winners badge">
+        <img id = "medal" src="./images/Medal10.png" alt="a bronze medal">
+        <img id = "graduate" src="./images/Graduate 50.png" alt="a doctorate hat">
+        <img id = "trophy2" src="./images/Trophy90.png" alt="a goldish trophy">
+        <img id = "trophy1" src="./images/Trophy100.png" alt="a crowned gold trophy">
+    </div>
+
+    <div class = "buttons-container">
+        <button id = "start-game">Start new game</button>
+        <button id = "f50-50">Fifty-Fifty</button>
+     <button id = "Narrow">Narrow down</button>
+     <p id = "attempts">You've used <output id = "output">0</output> out of your <output id = "attempts-lim"></output> assists.</p>
+     </div>
+
+   
+    <p class = "question">Find where number <span id="num"></span> belongs.</p>
+    <div class = "game-background" id = "bg-game" >
+    <div class="game" id = "main-game"  >
+        <div class="top-row" id = "id-game">
+            <div class="square" id = "col-1"></div>
+            <div class="square" id = "col-2"><p>1</p></div>
+            <div class="square" id = "col-3"><p>2</p></div>
+            <div class="square" id = "col-4"><p>3</p></div>
+            <div class="square" id = "col-5"><p>4</p></div>
+            <div class="square" id = "col-6"><p>5</p></div>
+            <div class="square" id = "col-7"><p>6</p></div>
+            <div class="square" id = "col-8"><p>7</p></div>
+            <div class="square" id = "col-9"><p>8</p></div>
+            <div class="square" id = "col-10"><p>9</p></div>
+            <div class="square" id = "col-11"><p>10</p></div>
+            <div class="square" id = "col-12"><p>11</p></div>
+            <div class="square" id = "col-13"><p>12</p></div>
+        </div>
+        <div class="bottom-row"  >
+            <div class="side-row">
+                <div class="square" id = "row-1"><p>1</p></div>
+                <div class="square" id = "row-2"><p>2</p></div>
+                <div class="square" id = "row-3"><p>3</p></div>
+                <div class="square" id = "row-5"><p>4</p></div>
+                <div class="square" id = "row-6"><p>5</p></div>
+                <div class="square" id = "row-7"><p>6</p></div>
+                <div class="square" id = "row-8"><p>7</p></div>
+                <div class="square" id = "row-9"><p>8</p></div>
+                <div class="square" id = "row-10"><p>9</p></div>
+                <div class="square" id = "row-11"><p>10</p></div>
+                <div class="square" id = "row-12"><p>11</p></div>
+                <div class="square" id = "row-13"><p>12</p></div>
+            </div>
+            <div class="main" id ="game-cube" >
+                <div class="square"><button id="1">?</button></div>
+                <div class="square"><button id="2">?</button></div>
+                <div class="square"><button id="3">?</button></div>
+                <div class="square"><button id="4">?</button></div>
+                <div class="square"><button id="5">?</button></div>
+                <div class="square"><button id="6">?</button></div>
+                <div class="square"><button id="7">?</button></div>
+                <div class="square"><button id="8">?</button></div>
+                <div class="square"><button id="9">?</button></div>
+                <div class="square"><button id="10">?</button></div>
+                <div class="square"><button id="11">?</button></div>
+                <div class="square"><button id="12">?</button></div>
+                <div class="square"><button id="13">?</button></div>
+                <div class="square"><button id="14">?</button></div>
+                <div class="square"><button id="15">?</button></div>
+                <div class="square"><button id="16">?</button></div>
+                <div class="square"><button id="17">?</button></div>
+                <div class="square"><button id="18">?</button></div>
+                <div class="square"><button id="19">?</button></div>
+                <div class="square"><button id="20">?</button></div>
+                <div class="square"><button id="21">?</button></div>
+                <div class="square"><button id="22">?</button></div>
+                <div class="square"><button id="23">?</button></div>
+                <div class="square"><button id="24">?</button></div>
+                <div class="square"><button id="25">?</button></div>
+                <div class="square"><button id="26">?</button></div>
+                <div class="square"><button id="27">?</button></div>
+                <div class="square"><button id="28">?</button></div>
+                <div class="square"><button id="29">?</button></div>
+                <div class="square"><button id="30">?</button></div>
+                <div class="square"><button id="31">?</button></div>
+                <div class="square"><button id="32">?</button></div>
+                <div class="square"><button id="33">?</button></div>
+                <div class="square"><button id="34">?</button></div>
+                <div class="square"><button id="35">?</button></div>
+                <div class="square"><button id="36">?</button></div>
+                <div class="square"><button id="37">?</button></div>
+                <div class="square"><button id="38">?</button></div>
+                <div class="square"><button id="39">?</button></div>
+                <div class="square"><button id="40">?</button></div>
+                <div class="square"><button id="41">?</button></div>
+                <div class="square"><button id="42">?</button></div>
+                <div class="square"><button id="43">?</button></div>
+                <div class="square"><button id="44">?</button></div>
+                <div class="square"><button id="45">?</button></div>
+                <div class="square"><button id="46">?</button></div>
+                <div class="square"><button id="47">?</button></div>
+                <div class="square"><button id="48">?</button></div>
+                <div class="square"><button id="49">?</button></div>
+                <div class="square"><button id="50">?</button></div>
+                <div class="square"><button id="51">?</button></div>
+                <div class="square"><button id="52">?</button></div>
+                <div class="square"><button id="53">?</button></div>
+                <div class="square"><button id="54">?</button></div>
+                <div class="square"><button id="55">?</button></div>
+                <div class="square"><button id="56">?</button></div>
+                <div class="square"><button id="57">?</button></div>
+                <div class="square"><button id="58">?</button></div>
+                <div class="square"><button id="59">?</button></div>
+                <div class="square"><button id="60">?</button></div>
+                <div class="square"><button id="61">?</button></div>
+                <div class="square"><button id="62">?</button></div>
+                <div class="square"><button id="63">?</button></div>
+                <div class="square"><button id="64">?</button></div>
+                <div class="square"><button id="65">?</button></div>
+                <div class="square"><button id="66">?</button></div>
+                <div class="square"><button id="67">?</button></div>
+                <div class="square"><button id="68">?</button></div>
+                <div class="square"><button id="69">?</button></div>
+                <div class="square"><button id="70">?</button></div>
+                <div class="square"><button id="71">?</button></div>
+                <div class="square"><button id="72">?</button></div>
+                <div class="square"><button id="73">?</button></div>
+                <div class="square"><button id="74">?</button></div>
+                <div class="square"><button id="75">?</button></div>
+                <div class="square"><button id="76">?</button></div>
+                <div class="square"><button id="77">?</button></div>
+                <div class="square"><button id="78">?</button></div>
+                <div class="square"><button id="79">?</button></div>
+                <div class="square"><button id="80">?</button></div>
+                <div class="square"><button id="81">?</button></div>
+                <div class="square"><button id="82">?</button></div>
+                <div class="square"><button id="83">?</button></div>
+                <div class="square"><button id="84">?</button></div>
+                <div class="square"><button id="85">?</button></div>
+                <div class="square"><button id="86">?</button></div>
+                <div class="square"><button id="87">?</button></div>
+                <div class="square"><button id="88">?</button></div>
+                <div class="square"><button id="89">?</button></div>
+                <div class="square"><button id="90">?</button></div>
+                <div class="square"><button id="91">?</button></div>
+                <div class="square"><button id="92">?</button></div>
+                <div class="square"><button id="93">?</button></div>
+                <div class="square"><button id="94">?</button></div>
+                <div class="square"><button id="95">?</button></div>
+                <div class="square"><button id="96">?</button></div>
+                <div class="square"><button id="97">?</button></div>
+                <div class="square"><button id="98">?</button></div>
+                <div class="square"><button id="99">?</button></div>
+                <div class="square"><button id="100">?</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class = "buttons-container">
+    <p id = "errors" >You have made <span id="mistakes">0</span> mistakes of the <span id = "mistake-count"></span> allowed.</p>
+    <button id = "main-menu">Main menu</button>
+ </div>
+ </body>
+</html>
